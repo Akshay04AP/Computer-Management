@@ -38,14 +38,23 @@ function computer_assign(){
                 lab_num = lab_num + 1;
             }
         }
-        computer_allocate.innerHTML = "You Have Been Allocated Computer Number " + com_num + " in CSE Lab " + lab_num + "<br> Student Name: <b>" + fname + "</b><br> Student Number: <b>" + stu_num + "</b><br> Subject Name: <b>" + sub + "</b";
+
+        let currentDate = new Date();
+        let hours = currentDate.getHours();
+        let minutes = currentDate.getMinutes();
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+        computer_allocate.innerHTML = "You Have Been Allocated Computer Number <b>" + com_num + "</b> in CSE Lab <b>" + lab_num + "</b><br> Student Name: <b>" + fname + "</b><br> Student Number: <b>" + stu_num + "</b><br> Subject Name: <b>" + sub + "</b><br> Time Allocated: <b>" + hours + ':' + (minutes < 10 ? '0' : '') + minutes + "</b> To <b>" + (hours + 2) + ':' + (minutes < 10 ? '0' : '') + minutes + "</b><br><b>" + weekday[currentDate.getUTCDay()] + ", " + currentDate.getUTCDate() + " " + months[currentDate.getUTCMonth()] + " " + currentDate.getUTCFullYear() + "</b>";
     }
     else{
         computer_allocate.innerHTML = "Enter Correct Input";
         document.getElementById("registration").classList.add("wrong_input");
         document.getElementById("allocation").classList.add("wrong_input");
-    }
-    
-    
+    }   
+}
 
+function current_time(){
+    
+    
 }
